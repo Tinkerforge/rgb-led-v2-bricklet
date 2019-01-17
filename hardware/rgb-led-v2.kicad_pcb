@@ -6823,7 +6823,7 @@
   (segment (start 133.776751 122.276751) (end 135.05 123.55) (width 0.2) (layer Vorderseite) (net 21) (tstamp 5B33CFE0))
   (segment (start 135.05 123.55) (end 135.05 124.175) (width 0.2) (layer Vorderseite) (net 21) (tstamp 5B33CFE1))
 
-  (zone (net 1) (net_name GND) (layer Rückseite) (tstamp 564C53FC) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer Rückseite) (tstamp 5C40A403) (hatch edge 0.508)
     (connect_pads (clearance 0.4))
     (min_thickness 0.2)
     (fill yes (arc_segments 16) (thermal_gap 0.21) (thermal_bridge_width 0.21))
