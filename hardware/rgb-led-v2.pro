@@ -1,4 +1,4 @@
-update=Fr 18 Jan 2019 14:31:39 CET
+update=Di 29 Jan 2019 10:38:48 CET
 version=1
 last_client=kicad
 [cvpcb]
@@ -30,7 +30,6 @@ LabSize=60
 version=1
 PageLayoutDescrFile=
 LastNetListRead=
-UseCmpFile=1
 PadDrill=1.30048
 PadDrillOvalY=1.30048
 PadSizeH=2.99974
