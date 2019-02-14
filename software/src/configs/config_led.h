@@ -1,7 +1,7 @@
 /* rgb-led-v2-bricklet
- * Copyright (C) 2018 Olaf Lüke <olaf@tinkerforge.com>
+ * Copyright (C) 2019 Olaf Lüke <olaf@tinkerforge.com>
  *
- * main.c: Initialization for RGB LED Bricklet 2.0
+ * config_led.h: Config for RGB LED
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,27 +19,18 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include <stdio.h>
-#include <stdbool.h>
+#ifndef CONFIG_LED_H
+#define CONFIG_LED_H
 
-#include "configs/config.h"
+#define LED_PERIOD_VALUE        0xFFFF
 
-#include "bricklib2/bootloader/bootloader.h"
-#include "bricklib2/hal/system_timer/system_timer.h"
-#include "bricklib2/logging/logging.h"
-#include "communication.h"
-#include "led.h"
+#define LED_R_PIN               P1_0
+#define LED_R_CCU4_SLICE        0
 
-int main(void) {
-	logging_init();
-	logd("Start RGB LED Bricklet 2.0\n\r");
+#define LED_G_PIN               P1_1
+#define LED_G_CCU4_SLICE        1
 
-	communication_init();
-	led_init();
+#define LED_B_PIN               P1_2
+#define LED_B_CCU4_SLICE        2
 
-	while(true) {
-		bootloader_tick();
-		communication_tick();
-		led_tick();
-	}
-}
+#endif

@@ -1,5 +1,5 @@
 /* rgb-led-v2-bricklet
- * Copyright (C) 2018 Olaf Lüke <olaf@tinkerforge.com>
+ * Copyright (C) 2019 Olaf Lüke <olaf@tinkerforge.com>
  *
  * communication.c: TFP protocol message handling
  *
@@ -24,16 +24,33 @@
 #include "bricklib2/utility/communication_callback.h"
 #include "bricklib2/protocols/tfp/tfp.h"
 
+#include "led.h"
+
 BootloaderHandleMessageResponse handle_message(const void *message, void *response) {
 	switch(tfp_get_fid_from_message(message)) {
-
+		case FID_SET_RGB_VALUE: return set_rgb_value(message);
+		case FID_GET_RGB_VALUE: return get_rgb_value(message, response);
 		default: return HANDLE_MESSAGE_RESPONSE_NOT_SUPPORTED;
 	}
 }
 
 
+BootloaderHandleMessageResponse set_rgb_value(const SetRGBValue *data) {
+	led.r = data->r;
+	led.g = data->g;
+	led.b = data->b;
 
+	return HANDLE_MESSAGE_RESPONSE_EMPTY;
+}
 
+BootloaderHandleMessageResponse get_rgb_value(const GetRGBValue *data, GetRGBValue_Response *response) {
+	response->header.length = sizeof(GetRGBValue_Response);
+	response->r             = led.r;
+	response->g             = led.g;
+	response->b             = led.b;
+
+	return HANDLE_MESSAGE_RESPONSE_NEW_MESSAGE;
+}
 
 
 

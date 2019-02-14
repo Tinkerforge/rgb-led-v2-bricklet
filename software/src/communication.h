@@ -1,5 +1,5 @@
 /* rgb-led-v2-bricklet
- * Copyright (C) 2018 Olaf Lüke <olaf@tinkerforge.com>
+ * Copyright (C) 2019 Olaf Lüke <olaf@tinkerforge.com>
  *
  * communication.h: TFP protocol message handling
  *
@@ -53,12 +53,32 @@ void communication_init(void);
 #define RGB_LED_V2_STATUS_LED_CONFIG_SHOW_STATUS 3
 
 // Function and callback IDs and structs
+#define FID_SET_RGB_VALUE 1
+#define FID_GET_RGB_VALUE 2
 
 
+typedef struct {
+	TFPMessageHeader header;
+	uint8_t r;
+	uint8_t g;
+	uint8_t b;
+} __attribute__((__packed__)) SetRGBValue;
+
+typedef struct {
+	TFPMessageHeader header;
+} __attribute__((__packed__)) GetRGBValue;
+
+typedef struct {
+	TFPMessageHeader header;
+	uint8_t r;
+	uint8_t g;
+	uint8_t b;
+} __attribute__((__packed__)) GetRGBValue_Response;
 
 
 // Function prototypes
-
+BootloaderHandleMessageResponse set_rgb_value(const SetRGBValue *data);
+BootloaderHandleMessageResponse get_rgb_value(const GetRGBValue *data, GetRGBValue_Response *response);
 
 // Callbacks
 
