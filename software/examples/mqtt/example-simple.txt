@@ -1,0 +1,5 @@
+# Change XYZ to the UID of your RGB LED Bricklet 2.0
+
+setup:
+	# Set light blue color
+	publish '{"r": 0, "g": 170, "b": 234}' to tinkerforge/request/rgb_led_v2_bricklet/XYZ/set_rgb_value 
