@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6002)
-    (drawings 12)
+    (drawings 13)
     (tracks 155)
     (zones 0)
     (modules 26)
@@ -6646,6 +6646,7 @@
       (xy 2.3114 -1.67132)) (layer B.SilkS) (width 0.00254))
   )
 
+  (gr_circle (center 141.9 118.1) (end 143.8 118.1) (layer Dwgs.User) (width 0.381))
   (gr_text Status (at 142.63 113.05 90) (layer F.SilkS)
     (effects (font (size 0.7 0.7) (thickness 0.15)))
   )
