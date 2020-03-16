@@ -2,4 +2,4 @@
 
 setup:
 	# Set light blue color
-	publish '{"r": 0, "g": 170, "b": 234}' to tinkerforge/request/rgb_led_v2_bricklet/XYZ/set_rgb_value 
+	publish '{"r": 0, "g": 170, "b": 234}' to tinkerforge/request/rgb_led_v2_bricklet/XYZ/set_rgb_value
