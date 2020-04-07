@@ -14,7 +14,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                                           // Don't use device before ipcon is connected.
 
     // Set light blue color
-    rl.set_rgb_value(0, 170, 234);
+    rl.set_rgb_value(0, 170, 234).recv()?;
 
     println!("Press enter to exit.");
     let mut _input = String::new();
