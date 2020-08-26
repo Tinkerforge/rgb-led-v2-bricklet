@@ -11,10 +11,8 @@ void example_setup(TF_HalContext *hal) {
 	// Create device object
 	check(tf_rgb_led_v2_create(&rl, UID, hal), "create device object");
 
-
 	// Set light blue color
 	check(tf_rgb_led_v2_set_rgb_value(&rl, 0, 170, 234), "call set_rgb_value");
-
 }
 
 void example_loop(TF_HalContext *hal) {
