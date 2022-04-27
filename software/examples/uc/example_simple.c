@@ -1,23 +1,19 @@
 // This example is not self-contained.
-// It requres usage of the example driver specific to your platform.
+// It requires usage of the example driver specific to your platform.
 // See the HAL documentation.
 
-#include "bindings/hal_common.h"
-#include "bindings/bricklet_rgb_led_v2.h"
+#include "src/bindings/hal_common.h"
+#include "src/bindings/bricklet_rgb_led_v2.h"
 
-#define UID "XYZ" // Change XYZ to the UID of your RGB LED Bricklet 2.0
-
-void check(int rc, const char* msg);
-
+void check(int rc, const char *msg);
 void example_setup(TF_HAL *hal);
 void example_loop(TF_HAL *hal);
-
 
 static TF_RGBLEDV2 rl;
 
 void example_setup(TF_HAL *hal) {
 	// Create device object
-	check(tf_rgb_led_v2_create(&rl, UID, hal), "create device object");
+	check(tf_rgb_led_v2_create(&rl, NULL, hal), "create device object");
 
 	// Set light blue color
 	check(tf_rgb_led_v2_set_rgb_value(&rl, 0, 170, 234), "call set_rgb_value");
